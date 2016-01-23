@@ -6,7 +6,8 @@
 
 > This is a "Angular Restaurant" website, a virtual restaurant displaying a list of menu items. User
 will be able to choose items online, add it to their cart and then place an online order with different payment methods.
-(Status: IN PROGRESS)
+
+> **(Status: IN PROGRESS)**
 
 ## Before you run the application
 
