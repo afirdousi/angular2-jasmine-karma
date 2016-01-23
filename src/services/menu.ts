@@ -2,7 +2,7 @@
  * Created by afirdousi on 1/22/16.
  */
 import {Injectable} from 'angular2/core';
-import {Error} from "../../node_modules/typescript/lib/lib";
+//import {Error} from "../../node_modules/typescript/lib/lib";
 
 @Injectable()
 export class MenuService{
@@ -14,14 +14,13 @@ export class MenuService{
 
     getMenuItems(count:number){
         var result = [];
-        noOfItemAvailable = this.menuItems.length;
 
-        if(count){
+        if(!count){
             //return all
-            throw new Error('Specify number of items required');;
+            throw new Error('Specify number of items required');
         }else{
-            if(count>noOfItemAvailabe){
-                count = noOfItemAvailabe;
+            if(count>this.menuItems.length){
+                count = this.menuItems.length;
             }
         }
 

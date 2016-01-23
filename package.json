@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && tsc -p src",
-    "start": "http-server -c-1 -o -p 4000",
-    "pretest":"npm run build",
-    "posttest":"node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage -t html",
-    "coverage":"http-server -c-1 -o -p 4001"
+    "start": "http-server -c-1 -o -p 4000 .",
+    "pretest": "npm run build",
+    "test": "karma start karma.conf.js",
+    "posttest": "node_modules/.bin/remap-istanbul -i coverage/coverage-final.json -o coverage -t html",
+    "coverage": "http-server -c-1 -o -p 4001 ./coverage"
   },
   "repository": {
     "type": "git",
