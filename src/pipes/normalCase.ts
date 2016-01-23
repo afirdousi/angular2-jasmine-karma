@@ -14,6 +14,6 @@ export class NormalCase implements PipeTransform {
         return text.split(' ').map((str) => {
                 return str.charAt(0).toUpperCase() + str.substr(1).toLowerCase();
             }
-        );
+        ).join(' ');
     }
 }
