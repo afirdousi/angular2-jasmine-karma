@@ -41,13 +41,22 @@ npm test
 
 ## How to run test coverage report?
 
-This brings test results and coverage status on a nice HTML test report page.
+This brings test results and coverage status on a nice HTML test report page using Istanbul.
 
 ```javascript
 
 npm run coverage
 
 ```
+
+## Frameworks/Libraries Used
+
+1. [Angular JS 2](https://angular.io/)
+2. [Jasmine JS](http://jasmine.github.io/)
+3. [Karma](https://karma-runner.github.io/0.13/index.html)
+4. [TyepScript](http://www.typescriptlang.org/)
+5. [Lodash](https://lodash.com/docs)
+
 
 ## Want to help?
 

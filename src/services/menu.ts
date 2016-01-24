@@ -2,7 +2,7 @@
  * Created by afirdousi on 1/22/16.
  */
 import {Injectable} from 'angular2/core';
-//import {Error} from "../../node_modules/typescript/lib/lib";
+declare var _:any;
 
 @Injectable()
 export class MenuService{
@@ -24,9 +24,7 @@ export class MenuService{
             }
         }
 
-        for(var i=0;i<count;i++){
-            result.push(this.menuItems[i]);
-        }
+        result = _.take(this.menuItems,count);
 
         return result;
 

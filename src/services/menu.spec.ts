@@ -4,7 +4,7 @@
 import {it,describe,expect,beforeEach,inject} from 'angular2/testing';
 import {MenuService} from './menu';
 
-describe('Menu Service Tests',()=>{
+describe('Menu Service Tests : ',()=>{
 
     let service:MenuService = new MenuService();
 

@@ -2,7 +2,6 @@ import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
 import {MenuList} from "./menu/menuList";
 
-
 @Component({
     selector:'restaurant-app',
     template:`

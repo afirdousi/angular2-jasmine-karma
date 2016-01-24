@@ -5,7 +5,7 @@ import {it,describe,expect,beforeEach,inject} from 'angular2/testing';
 import {NormalCase} from './normalCase';
 import NumberFormatOptions = Intl.NumberFormatOptions;
 
-describe('NormalCase Pipe',()=>{
+describe('NormalCase Pipe : ',()=>{
    let pipe:NormalCase;
 
     beforeEach(()=>{
