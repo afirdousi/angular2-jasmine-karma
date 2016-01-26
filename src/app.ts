@@ -1,13 +1,24 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {MenuList} from "./menu/menuList";
+import {MenuList} from './menu/menuList';
+import {Header} from './header/header';
 
 @Component({
     selector:'restaurant-app',
+    directives:[Header,MenuList],
     template:`
-    <h3>Angular Restaurant</h3> <hr/>
-    <menu-list></menu-list>`,
-    directives:[MenuList]
+    <div class="container">
+        <header></header>
+        <menu-list></menu-list>
+    </div>`,
+    styles:[
+        `
+            .container{
+                width:90%;
+                margin: 0px auto;
+            }
+        `
+    ]
 })
 class RestaurantApp{
     constructor(){

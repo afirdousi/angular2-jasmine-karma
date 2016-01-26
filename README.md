@@ -29,6 +29,31 @@ npm start
 
 ```
 
+#### Other recommended ways
+
+> On the terminal, do 
+
+```javascript
+
+npm start
+
+```
+
+>Open another terminal tab and then do 
+
+```javascript
+
+npm run build-and-watch
+
+```
+
+If you use build-and-watch, you do not have to use build. This will build your project for the first time
+and will watch for any changes in /src/ folder. Once a change is detected, it will re-transpile your
+TypeScript to JavaScript and push your new stuff to /dist/. You do not have to re start the project, just
+refresh the page.
+
+ ** TODO: ** Add browser sync so we do not have even have to reload the page. 
+
 ## How to run tests?
 
 This will run the test using Karma/Jasmine. Shows the result on terminal. 

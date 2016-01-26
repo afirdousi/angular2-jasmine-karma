@@ -12,8 +12,20 @@ import {NormalCase} from '../pipes/normalCase';
                 </li>
               </ul>`,
     styles:[`
-
-
+        ul{
+            list-style:none;
+            margin:0px;
+            padding:0px;
+        }
+        li{
+            padding:10px 5px;
+        }
+        li:nth-child(odd) {
+             background-color:#fff;
+        }
+        li:nth-child(even) {
+              background-color: #daf9e1;
+        }
     `]
 
 })
