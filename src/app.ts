@@ -1,15 +1,17 @@
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {MenuList} from './menu/menuList';
-import {Header} from './header/header';
+import {MenuList} from './menu/menuList.component';
+import {Header} from './header/header.component';
+import {MenuCategory} from './menu-category/menu-category.component';
 
 @Component({
     selector:'restaurant-app',
-    directives:[Header,MenuList],
+    directives:[Header,MenuCategory, MenuList],
     template:`
     <div class="container">
         <header></header>
-        <menu-list></menu-list>
+        <menu-category></menu-category>
+        <menu-list [heading]="'Top Menu Items'" ></menu-list>
     </div>`,
     styles:[
         `
@@ -24,6 +26,7 @@ class RestaurantApp{
     constructor(){
         console.log('Starting Angular 2 Restaurant App');
     }
+
 }
 
 bootstrap(RestaurantApp);

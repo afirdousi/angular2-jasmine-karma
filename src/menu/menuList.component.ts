@@ -1,17 +1,27 @@
 import {Component,OnInit} from 'angular2/core';
-import {MenuService} from '../services/menu';
-import {NormalCase} from '../pipes/normalCase';
+import {MenuService} from '../services/menu.service';
+import {NormalCase} from '../pipes/normalCase.pipe';
 
 @Component({
     selector:'menu-list',
     bindings:[MenuService],
     pipes:[NormalCase],
-    template:`<ul>
-                <li *ngFor="#item of menuItems">
-                    {{ item }}
-                </li>
-              </ul>`,
+    inputs:['heading'],
+    template:`
+              <div class="menu-list">
+                <h2>{{ heading }}</h2>
+                <ul>
+                    <li *ngFor="#item of menuItems">
+                        {{ item }}
+                    </li>
+                </ul>
+              </div>
+              `,
     styles:[`
+        .menu-list{
+            width:70%;
+            margin:0px auto;
+        }
         ul{
             list-style:none;
             margin:0px;
@@ -24,7 +34,7 @@ import {NormalCase} from '../pipes/normalCase';
              background-color:#fff;
         }
         li:nth-child(even) {
-              background-color: #daf9e1;
+              background-color: #eaeaea;
         }
     `]
 
@@ -32,6 +42,8 @@ import {NormalCase} from '../pipes/normalCase';
 export  class MenuList implements OnInit{
     menuItems:Array<string>;
     service:MenuService;
+    heading:string ='';
+    //menuSelect = new EventEmitter<>();
 
     constructor(service:MenuService){
         this.service=service;

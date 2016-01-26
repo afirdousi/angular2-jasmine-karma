@@ -1,6 +1,6 @@
 import {it,describe,expect,beforeEach,inject} from 'angular2/testing';
-import {MenuList} from '../menu/menuList';
-import {MenuService} from '../services/menu';
+import {MenuList} from '../menu/menuList.component';
+import {MenuService} from '../services/menu.service';
 
 describe('Menu List Tests : ',()=> {
 

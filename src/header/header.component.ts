@@ -1,5 +1,5 @@
 import {Component,OnInit} from 'angular2/core';
-import {MenuService} from '../services/menu';
+import {MenuService} from '../services/menu.service';
 
 @Component({
     selector:'header',
@@ -13,7 +13,7 @@ import {MenuService} from '../services/menu';
     styles:[`
     .header{
         min-height: 100px;
-        background-color:#0074D9;
+        background-color:#1ccacd;
         color:#fff;
         padding:10px;
     }

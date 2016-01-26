@@ -2,7 +2,7 @@
  * Created by afirdousi on 1/23/16.
  */
 import {it,describe,expect,beforeEach,inject} from 'angular2/testing';
-import {NormalCase} from './normalCase';
+import {NormalCase} from './normalCase.pipe';
 import NumberFormatOptions = Intl.NumberFormatOptions;
 
 describe('NormalCase Pipe : ',()=>{

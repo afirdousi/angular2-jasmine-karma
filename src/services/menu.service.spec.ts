@@ -2,7 +2,7 @@
  * Created by afirdousi on 1/23/16.
  */
 import {it,describe,expect,beforeEach,inject} from 'angular2/testing';
-import {MenuService} from './menu';
+import {MenuService} from './menu.service';
 
 describe('Menu Service Tests : ',()=>{
 
