@@ -21,7 +21,8 @@ describe('Menu Service Tests : ',()=>{
 
     it('Should return all available menu items',()=>{
         var items = service.getMenuItems(10000000000000);
-        expect(items).toEqual(['Burger','Fries','New York Cheese Cake','Pakistani Biryani','Chicken Nuugets','Chinese Rice']);
+        expect(items).toEqual([{name:'Burger',price:13.2},{name:'Fries',price:4.5},{name:'New York Cheese Cake',price:6},{name:'Pakistani Biryani',price:8},
+            {name:'Chicken Nuugets',price:5},{name:'Chinese Rice',price:9}]);
     });
 
 });

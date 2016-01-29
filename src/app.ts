@@ -3,15 +3,17 @@ import {bootstrap} from 'angular2/platform/browser';
 import {MenuList} from './menu/menuList.component';
 import {Header} from './header/header.component';
 import {MenuCategory} from './menu-category/menu-category.component';
+import {MenuService} from './services/menu.service';
 
 @Component({
     selector:'restaurant-app',
     directives:[Header,MenuCategory, MenuList],
+    providers:[MenuService],
     template:`
     <div class="container">
         <header></header>
         <menu-category></menu-category>
-        <menu-list [heading]="'Top Menu Items'" ></menu-list>
+        <menu-list heading="Top Menu" ></menu-list>
     </div>`,
     styles:[
         `
@@ -23,10 +25,17 @@ import {MenuCategory} from './menu-category/menu-category.component';
     ]
 })
 class RestaurantApp{
+
+    selectedCategory:any;
+
     constructor(){
         console.log('Starting Angular 2 Restaurant App');
     }
 
+    onCategorySelected(category){
+        this.selectedCategory = category;
+    }
+
 }
 
-bootstrap(RestaurantApp);
+bootstrap(RestaurantApp,[MenuService]);

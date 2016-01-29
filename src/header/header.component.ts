@@ -1,9 +1,7 @@
-import {Component,OnInit} from 'angular2/core';
-import {MenuService} from '../services/menu.service';
+import {Component,OnInit,EventEmitter} from 'angular2/core';
 
 @Component({
     selector:'header',
-    bindings:[MenuService],
     template:`
         <div class="header">
             <h2>Angular Restaurant</h2>
@@ -24,10 +22,10 @@ import {MenuService} from '../services/menu.service';
 })
 export  class Header implements OnInit{
     menuItems:Array<string>;
-    service:MenuService;
 
-    constructor(service:MenuService){
-        this.service=service;
+
+    constructor(){
+
     }
 
     ngOnInit(){

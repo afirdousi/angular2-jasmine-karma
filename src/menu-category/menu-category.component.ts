@@ -1,12 +1,12 @@
-import {Component,OnInit} from 'angular2/core';
+import {Component,OnInit,EventEmitter} from 'angular2/core';
 import {MenuService} from '../services/menu.service';
-import {MenuList} from '../menu/menuList.component';
+
 
 @Component({
     selector:'menu-category',
-    bindings:[MenuService,MenuList],
     template:`
-       <ul>
+       <ul (click)="selectCategory($event.target)">
+            <li>Top</li>
             <li>American</li>
             <li>Italian</li>
             <li>Mexican</li>
@@ -29,7 +29,7 @@ import {MenuList} from '../menu/menuList.component';
       margin:0px auto;
     }
     li{
-        width: 20%;
+        width: 19.8%;
         height: 100px;
         float:left;
         background-color:#d3d3d3;
@@ -37,19 +37,21 @@ import {MenuList} from '../menu/menuList.component';
         margin:0px;
         line-height:100px;
         text-align:center;
+        border-right:1px solid black;
      }
      li:hover{
         cursor:pointer;
         background-color:#000;
         color:#d3d3d3;
      }
-
+     li:last-child{
+        border:none;
+     }
 
     `]
 
 })
 export  class MenuCategory implements OnInit{
-    menuItems:Array<string>;
     service:MenuService;
 
     constructor(service:MenuService){
@@ -57,7 +59,10 @@ export  class MenuCategory implements OnInit{
     }
 
     ngOnInit(){
-       // this.menuItems = this.service.getMenuItems(100);
+        //Do something at initializtion
     }
 
+    selectCategory(category){
+        this.service.selectCategory(category);
+    }
 }

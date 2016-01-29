@@ -1,15 +1,19 @@
 /**
  * Created by afirdousi on 1/22/16.
  */
-import {Injectable} from 'angular2/core';
+import {Injectable,EventEmitter} from 'angular2/core';
 declare var _:any;
 
 @Injectable()
 export class MenuService{
-    menuItems:Array<string>;
+    menuItems:Array<Object>; //TODO: Change this to an array of type "MenuItem"
+    categorySelected:EventEmitter<MouseEvent> = new EventEmitter();
+
 
     constructor(){
-        this.menuItems = ['Burger','Fries','New York Cheese Cake','Pakistani Biryani','Chicken Nuugets','Chinese Rice'];
+        this.menuItems = [{name:'Burger',price:13.2},{name:'Fries',price:4.5},{name:'New York Cheese Cake',price:6},{name:'Pakistani Biryani',price:8},
+            {name:'Chicken Nuugets',price:5},{name:'Chinese Rice',price:9}];
+
     }
 
     getMenuItems(count:number){
@@ -28,6 +32,17 @@ export class MenuService{
 
         return result;
 
+    }
+
+
+    selectCategory(item){
+        console.log("Emitting event ");
+        //console.log(item);
+       this.categorySelected.emit(item);
+    }
+
+    getCategorySelectionChangeEmitter(){
+        return this.categorySelected;
     }
 
 }
